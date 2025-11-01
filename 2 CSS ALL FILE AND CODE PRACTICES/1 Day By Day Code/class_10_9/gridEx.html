@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Example</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      section {
+        border: 2px solid red;
+        /* display: flex; */
+        display: grid;
+        grid-auto-flow: column; /*similar to flex-direction*/
+      }
+      div {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>text</div>
+      <div>text</div>
+      <div>text</div>
+      <div>text</div>
+      <div>text</div>
+      <div>text</div>
+    </section>
+  </body>
+</html>

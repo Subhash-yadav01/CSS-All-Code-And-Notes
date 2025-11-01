@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* In section tag, if p tag is the first-child ,then add styling for that */
+      section p:first-child {
+        background-color: red;
+      }
+      p:first-of-type {
+        background-color: yellow;
+      }
+      section div:first-of-type {
+        background-color: blue;
+      }
+      section div:last-of-type {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>
+      <article>art1</article>
+      <p>para1</p>
+      <p>para2</p>
+      <p>para3</p>
+    </div> -->
+
+    <div>
+      <p>text1</p>
+      <p>text2</p>
+      <section>
+        <article>art</article>
+        <p>para3</p>
+        <p>para4</p>
+        <p>para5</p>
+      </section>
+    </div>
+
+    <section>
+      <nav>nav</nav>
+      <div>div</div>
+      <div>div</div>
+      <div>div</div>
+      <div>div</div>
+      <footer>footer</footer>
+    </section>
+  </body>
+</html>

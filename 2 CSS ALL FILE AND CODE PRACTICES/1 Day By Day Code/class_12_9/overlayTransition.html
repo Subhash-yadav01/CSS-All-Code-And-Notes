@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fixed and sticky</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        grid-template-rows: 80px 1fr 40px;
+        /* height: 100vh; */
+      }
+      header {
+        background-color: coral;
+        color: white;
+        position: sticky;
+        top: 0px;
+        box-shadow: 0px 1px 1px 1px white;
+      }
+      main {
+        background-color: grey;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 20%;
+        padding: 10px;
+        gap: 10px;
+      }
+      footer {
+        background-color: black;
+        color: white;
+      }
+      .leftSideBlock {
+        text-align: justify;
+      }
+      .advt {
+        position: fixed;
+      }
+      footer {
+        text-align: center;
+        font-style: italic;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .logo {
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+      }
+      /* overlay tran */
+      .overlay {
+        background-color: grey;
+        opacity: 1;
+        height: 90vh;
+        position: fixed;
+        top: 81px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition-property: display, opacity;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+        transition-behavior: allow-discrete;
+      }
+      .popup {
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 20px;
+        width: 450px;
+      }
+      .closeBtn {
+        background: blue;
+        /* display: inline-block; */
+        padding: 8px 30px;
+        border-radius: 7px;
+        color: white;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin-top: 50px;
+      }
+      #toggle:checked ~ .overlay {
+        display: none;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="../../Assets/images/Alogo.jpeg"
+          alt=""
+          height="60px"
+          width="60px"
+          style="border-radius: 50%"
+        />
+      </div>
+      <div class="menu">MenuBlock</div>
+      <div class="auth">authBlock</div>
+    </header>
+    <main>
+      <article class="leftSideBlock">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quasi
+        tempore optio recusandae quis magnam sequi exercitationem? Aliquam
+        quidem pariatur rerum natus, iusto enim magnam eligendi accusantium
+        molestiae itaque illo! Modi non, architecto consequuntur voluptatem
+        necessitatibus officiis nemo cum, quisquam veritatis facere inventore id
+        iure nam harum cupiditate veniam ad sapiente deserunt aut reiciendis
+        dolorem? Temporibus soluta beatae sapiente! Autem. Ex veritatis facere
+        officia quod quam repellendus commodi maiores culpa accusamus fuga
+        aliquam quisquam esse repudiandae temporibus, sint quas doloribus
+        consectetur eveniet inventore quia eligendi dignissimos ad! Laboriosam,
+        vel quas. Eaque, nobis ea provident quibusdam, beatae recusandae, vero
+        at reiciendis qui est eum a culpa quidem perferendis id! Ipsam possimus
+        illum provident aliquid iusto, vero repellendus animi libero ipsum
+        reprehenderit. Ad inventore, praesentium ab numquam eveniet esse magnam
+        accusantium? Soluta quia deleniti deserunt hic inventore! Quaerat
+        nesciunt architecto inventore ratione, commodi unde minima voluptates
+        natus quo eaque aliquid cum porro? Sapiente libero quidem excepturi quam
+        consectetur aperiam, a soluta et totam perspiciatis possimus explicabo
+        cupiditate odit veritatis consequatur architecto blanditiis itaque
+        asperiores in minus vero eius modi laboriosam! Molestias, non.
+        Inventore, iure! Necessitatibus reprehenderit molestiae at quas. Dolorem
+        animi quasi delectus dolore debitis, eligendi, harum sed saepe ex,
+        incidunt facilis quos velit corporis quam laboriosam? Consequatur
+        dolores in iure itaque. Illum atque at animi similique sunt,
+        voluptatibus officia suscipit nesciunt quam, dolorem odio accusamus.
+        Facere eum, fugiat esse quasi quo dolores, culpa sint ad, minima
+        aspernatur autem veritatis id cumque. Provident iste sit debitis
+        corrupti optio eveniet animi voluptatem eius quibusdam. Quae, tempora.
+        Tempora optio amet deleniti laudantium doloribus, perspiciatis iusto,
+        vitae excepturi vero iste nulla consequuntur natus delectus animi.
+        Exercitationem est ipsam explicabo amet ullam voluptate architecto, sunt
+        sed molestias voluptatibus ipsum modi doloribus vel fugit quod velit!
+        Maiores enim dignissimos neque vero provident placeat, exercitationem
+        esse eaque veritatis. Reprehenderit quisquam itaque ipsum delectus a.
+        Aut asperiores nobis laudantium rerum, distinctio tempora impedit nulla
+        voluptate nostrum maiores pariatur tenetur quis modi magni, fugiat hic
+        vero incidunt unde. Est, perferendis! Eligendi voluptatem error dolores
+        assumenda eaque repudiandae ab quis impedit odit ipsam reiciendis
+        deserunt, incidunt debitis, ratione, provident perferendis consectetur!
+        Eius reiciendis deserunt hic minima iure suscipit. Voluptatibus,
+        voluptas totam? Esse possimus incidunt voluptate saepe minima reiciendis
+        minus doloribus ratione veniam fugiat mollitia, provident molestias
+        accusamus vitae praesentium amet sint ullam eos ex, blanditiis pariatur
+        dolore voluptatum ipsum molestiae! Illum. Repudiandae dolor assumenda
+        unde, labore commodi distinctio facere architecto placeat natus. Ipsa
+        tempora velit consectetur veritatis quam provident voluptatibus quis
+        pariatur perferendis consequuntur. Aut odio consequuntur harum
+        reprehenderit! Repellendus, in! Dicta minus quos a laboriosam, non,
+        tempore numquam odio maxime architecto similique dolore assumenda et
+        soluta dolor tempora, dolorem cupiditate repellat aut commodi quaerat.
+        Error eveniet ipsum itaque quo eum. Magni nostrum omnis eius rem, quis
+        officiis explicabo ea vel cumque ducimus laboriosam iure, atque nisi
+        tempore itaque, animi aliquam illo. Alias assumenda, cupiditate
+        molestias qui id aliquam cum esse! Consequuntur consequatur, assumenda
+        minus impedit perferendis expedita animi ullam vero hic tenetur numquam
+        sunt. Itaque dolorum blanditiis ab, laboriosam ipsam facere illum, quas
+        nesciunt officia expedita officiis corporis saepe adipisci? Voluptatum
+        repellendus voluptatem omnis laudantium tenetur error nihil doloribus
+        magnam obcaecati? Excepturi earum quas veniam placeat error dolorem
+        accusantium maiores facere? Qui nostrum, reprehenderit recusandae quos
+        magni placeat beatae quas? Repellat iusto nesciunt, sint assumenda
+        possimus tenetur sapiente necessitatibus esse nostrum, saepe libero,
+        ipsum incidunt cumque nobis iste sunt impedit! Officia iste rem incidunt
+        commodi laborum facere ipsa animi tenetur? Voluptatum harum totam error
+        id ex eos neque. Quo minus, laborum excepturi cum vero explicabo, harum
+        odio quaerat facilis placeat sequi, voluptatibus autem voluptas repellat
+        dolorem adipisci rem! Modi, nostrum? Molestias et nemo incidunt, ipsum
+        culpa laudantium sunt impedit adipisci eligendi minus! Sed, temporibus
+        assumenda quisquam laborum consequatur exercitationem sint accusantium
+        mollitia obcaecati aut debitis neque repellat ratione dolor laboriosam.
+        Libero optio culpa explicabo officiis corporis dolor at velit, deserunt
+        odit. Aspernatur, fuga sunt obcaecati iste mollitia ab explicabo
+        distinctio deserunt optio accusantium. Optio possimus nesciunt
+        exercitationem iusto doloribus dignissimos? Facere aspernatur
+        consectetur nam accusantium incidunt harum quibusdam deserunt rem? Ad
+        repudiandae odio eaque nostrum, harum nam corporis vitae. Cupiditate at
+        quo facere accusamus possimus quas ab iure ea non. Repudiandae deleniti
+        quaerat illum dolor placeat molestias autem eius reiciendis? Eum, eius
+        perferendis delectus iusto quaerat necessitatibus. Officiis sapiente
+        aliquid obcaecati suscipit quisquam aspernatur cumque, rerum, tempore,
+        eligendi accusamus debitis. Iste, suscipit! Eaque officiis quod harum
+        maiores, delectus ea necessitatibus, veniam ratione distinctio error
+        reprehenderit atque repellat tempora sint consectetur reiciendis dolore
+        doloremque aliquam neque optio quo! Odit, eligendi labore. Ducimus
+        architecto vero tenetur id molestias! Possimus eligendi saepe, quae
+        nobis asperiores ad cum iusto laboriosam hic rem delectus adipisci eaque
+        libero fuga maiores distinctio et dolores praesentium! Labore, impedit!
+        Explicabo molestias magnam sapiente? Assumenda, at harum adipisci quia
+        nemo consequuntur libero suscipit maxime recusandae voluptatibus
+        explicabo voluptas nulla voluptatem ducimus temporibus alias accusamus
+        ullam. Excepturi pariatur ea reiciendis est. Facilis obcaecati tenetur
+        voluptate quos quod nulla libero cum deleniti aspernatur reprehenderit
+        facere consequatur ipsum magni, cupiditate laudantium, eos aliquid
+        aperiam numquam, ratione optio incidunt praesentium dolorum! Nemo,
+        ratione tenetur. Molestias quae cumque quis quos nostrum aliquid vero
+        corporis odit? Fuga repellat corrupti aut, alias optio rem harum?
+        Officiis, adipisci. Culpa qui magnam, illum labore eveniet laboriosam
+        maxime aliquid quidem. Laborum vitae ab laudantium harum obcaecati
+        accusamus at autem dolore eius ea, facilis necessitatibus explicabo
+        porro? Illo odit facilis accusamus atque ratione, expedita doloribus et
+        quis nostrum, placeat iure fugiat. Libero fugit inventore, atque tempora
+        totam rem aspernatur. Inventore nihil amet porro reiciendis culpa
+        sapiente qui, sint quidem alias earum pariatur quae nulla. Fuga
+        explicabo cumque reprehenderit porro recusandae delectus. Et laborum ut
+        commodi ab id suscipit obcaecati ipsum, voluptas expedita dolorem earum
+        alias eaque asperiores nisi provident. At, eveniet eum. Debitis tempore
+        omnis, facilis nemo molestiae corporis impedit ducimus. Recusandae,
+        eaque? Ipsum adipisci necessitatibus nostrum dolor consectetur. Earum
+        fugit facilis hic maxime dignissimos veritatis harum. Id quas ratione
+        molestias nam ex enim ipsum vitae. Earum fugit quidem minima dolorem.
+        Distinctio incidunt accusamus necessitatibus consequuntur optio
+        quibusdam, est assumenda ex quia minima! Magnam fugit, tenetur dicta
+        amet ut sunt earum expedita iure quod quaerat veniam perferendis quidem
+        tempora, dolorum aliquam. Totam quos repellat id eius excepturi
+        perspiciatis dignissimos. Totam dolore veritatis facilis? Vel, tenetur!
+        Porro molestias ex id fugit rerum animi optio nostrum, impedit
+        reiciendis ab voluptates, expedita provident veritatis!
+      </article>
+      <article class="rightSideBlock">
+        <aside class="advt">
+          <figure>
+            <img
+              src="../../Assets/images/nareshItLogo.png"
+              alt=""
+              width="100%"
+            />
+            <figcaption>Naresh IT</figcaption>
+          </figure>
+          <video controls width="100%">
+            <source
+              src="../../Assets/videos/4114797-uhd_3840_2160_25fps.mp4"
+              type=""
+            />
+          </video>
+        </aside>
+      </article>
+    </main>
+    <footer><code>&copy;</code>copyright 2025 All rights Reserved</footer>
+    <input type="checkbox" name="" id="toggle" style="display: none" />
+    <div class="overlay">
+      <div class="popup">
+        <h2>Are you sure want to close this popup?</h2>
+        <label for="toggle" class="closeBtn">close</label>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Form in Table - Linear Gradient</title>
+<style>
+  /* Page background: linear gradient */
+  body.linear {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+
+  /* Centering table and making it responsive */
+  table {
+    border-collapse: collapse;
+    width: min(92vw, 540px);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  caption {
+    text-align: left;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+  td {
+    padding: 20px;
+  }
+
+  /* Form styling (form sits inside the <td>) */
+  form {
+    display: grid;
+    gap: 14px;
+  }
+  label {
+    color: #fff;
+    font-size: 0.95rem;
+    letter-spacing: .2px;
+  }
+  input, select, textarea, button {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.92);
+    font-size: 1rem;
+    outline: none;
+  }
+  textarea { min-height: 96px; resize: vertical; }
+
+  button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    color: #fff;
+    transition: transform .06s ease, filter .2s ease;
+  }
+  button:hover { filter: brightness(1.05); }
+  button:active { transform: translateY(1px); }
+
+  /* Simple two-column layout on larger screens */
+  .row {
+    display: grid;
+    gap: 12px;
+  }
+  @media (min-width: 560px) {
+    .row.two { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body class="linear">
+  <table role="presentation" aria-label="Contact form table">
+    <caption>Contact Us</caption>
+    <tr>
+      <td>
+        <form action="#" method="post" autocomplete="on" novalidate>
+          <div class="row two">
+            <div>
+              <label for="fname">First Name</label>
+              <input id="fname" name="fname" type="text" placeholder="John" required />
+            </div>
+            <div>
+              <label for="lname">Last Name</label>
+              <input id="lname" name="lname" type="text" placeholder="Doe" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="row two">
+            <div>
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option>General Query</option>
+                <option>Support</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+            <div>
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

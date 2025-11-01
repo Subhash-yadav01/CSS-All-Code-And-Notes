@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Prop</title>
+    <style>
+      #link1 {
+        color: green;
+      }
+      #link1:hover {
+        color: crimson;
+      }
+      #link2:visited {
+        color: greenyellow;
+      }
+      #link2:active {
+        color: orange;
+      }
+      /* do not use hover effect for a link during  active state of a link and vice versa*/
+      #link2:hover {
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- unvisited links are in blue color -->
+    <!-- visited links are in purple color -->
+    <!-- link is active state  is red color-->
+    <a href="#" id="link1">link1</a>
+    <a href="#" id="link2">link2</a>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        color: white;
+      }
+      .cardDepth {
+        perspective: 600px;
+        background-color: grey;
+        height: 350px;
+        width: 250px;
+      }
+      .card {
+        height: 350px;
+        width: 250px;
+        background-color: yellow;
+        transform-style: preserve-3d;
+        position: relative;
+        transition: transform 10s linear;
+      }
+      body:hover .card {
+        transform: rotateY(180deg);
+      }
+      .cardFace {
+        height: 350px;
+        width: 250px;
+        background-color: red;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+      .front {
+        background-color: green;
+      }
+      .back {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cardDepth">
+      <div class="card">
+        <div class="cardFace front"></div>
+        <div class="cardFace back"></div>
+      </div>
+    </div>
+  </body>
+</html>
